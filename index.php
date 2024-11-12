@@ -13,7 +13,8 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -28,8 +29,8 @@
     <link rel="icon" href="assets/img/Logo-SolucionesWeb.svg">
 
     <!-- CSS -->
-    <link href="assets/css/modal.css" rel="stylesheet">
     <link href="assets/css/product-item-img.css" rel="stylesheet">
+
 </head>
 
 <!-- ProductManager -->
@@ -90,27 +91,47 @@
                 </form>
             </div>
             <div class="col-lg-3 col-6 text-right">
-                <a href="" class="btn border">
+                <a href="#" class="btn border">
                     <i class="fas fa-heart text-primary"></i>
                     <span class="badge">0</span>
                 </a>
-                <a href="" class="btn border">
+                <a href="carrito.html" class="btn border">
                     <i class="fas fa-shopping-cart text-primary"></i>
                     <span class="badge">0</span>
                 </a>
             </div>
         </div>
     </div>
-
     <!-- Topbar End -->
     <?php include('models/topbar-end.php'); ?>
 
+    <!-- Navbar Start -->
     <?php include('models/navbar-star.php'); ?>
 
+    <div class="container-fluid">
+        <div class="row border-top px-xl-5">
 
+
+            <!-- Menú principal de navegación -->
+            <div class="col-lg-9" style="min-height: 70px">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light">
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <div class="navbar-nav">
+                            <a href="index.php" class="nav-item nav-link">Inicio</a>
+                            <a href="" class="nav-item nav-link">Nosotros</a>
+                            <a href="" class="nav-item nav-link">Conctactenos</a>
+                            <a href="" class="nav-item nav-link">Productos</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+    <!-- <hr> -->
     <!-- Page Header Start -->
     <div class="container-fluid bg-secondary mb-5">
-        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px;">
             <h1 class="font-weight-semi-bold text-uppercase mb-3">Productos</h1>
             <div class="d-inline-flex">
                 <p class="m-0"><a href="">Inicio</a></p>
@@ -126,37 +147,45 @@
         <div class="row px-xl-5">
             <!-- Shop Sidebar Start -->
             <div class="col-lg-3 col-md-12">
+                <!-- ETIQUETAS -->
                 <div class="border-bottom mb-4 pb-4">
                     <h5 class="font-weight-semi-bold mb-4">CATEGORIAS</h5>
                     <form>
                         <?php foreach ($categoriesOrganized as $category): ?>
                             <?php if (!empty($category['subcategories'])): ?>
+
                                 <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link" data-toggle="dropdown" data-category-id="<?= htmlspecialchars($category['id']) ?>">
+                                    <a href="#" class="nav-link" data-toggle="dropdown"
+                                        data-category-id="<?= htmlspecialchars($category['id']) ?>">
                                         <?= htmlspecialchars($category['name']) ?>
                                         <i class="fa fa-angle-down float-right mt-1"></i>
                                     </a>
                                     <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
                                         <?php foreach ($category['subcategories'] as $subcategory): ?>
-                                            <a href="#" class="dropdown-item" data-subcategory-id="<?= htmlspecialchars($subcategory['id']) ?>">
+
+                                            <a href="#" class="dropdown-item"
+                                                data-subcategory-id="<?= htmlspecialchars($subcategory['id']) ?>">
                                                 <?= htmlspecialchars($subcategory['name']) ?>
                                             </a>
+
                                         <?php endforeach; ?>
                                     </div>
                                 </div>
+
                             <?php else: ?>
-                                <a href="#" class="nav-item nav-link" data-category-id="<?= htmlspecialchars($category['id']) ?>">
+
+                                <a href="#" class="nav-item nav-link"
+                                    data-category-id="<?= htmlspecialchars($category['id']) ?>">
                                     <?= htmlspecialchars($category['name']) ?>
                                 </a>
+
                             <?php endif; ?>
                         <?php endforeach; ?>
+
                     </form>
                 </div>
                 </form>
 
-
-                <!-- ETIQUETAS -->
-                <!-- Modificar tu HTML actual para incluir un contenedor para los productos -->
                 <div class="border-bottom mb-4 pb-4">
                     <h5 class="font-weight-semi-bold mb-4">ETIQUETAS</h5>
                     <div class="labels-container">
@@ -169,11 +198,8 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <!-- Categorias End -->
 
             </div>
-            <!-- Shop Sidebar End -->
-
             <!-- Shop Sidebar End -->
 
             <!-- Shop Product Start -->
@@ -181,11 +207,13 @@
                 <div class="row pb-3">
                     <div class="col-12 pb-1">
                         <div class="d-flex align-items-center justify-content-between mb-4">
+
                         </div>
                     </div>
                 </div>
-
-                <!-- Título de la sección actual -->
+                
+                 <!--aca estaba  -->
+                 <!-- Título de la sección actual -->
                 <div class="row mb-4">
                     <div class="col-12">
                         <h2 id="current-section" class="text-center">Todos los productos</h2>
@@ -198,17 +226,16 @@
                     <span class="visually-hidden">Cargando...</span>
                 </div>
 
-                <div id="product-container" class="row">
-
-                </div>
             </div>
+                <div id="product-container" class="row">
+                </div>
         </div>
-    </div>
 
+    </div>
+    </div>
     </div>
     </div>
     <!-- Shop Product End -->
-    </div>
     </div>
     </div>
     </div>
@@ -217,55 +244,32 @@
     </div>
     <!-- Shop End -->
 
-    <style>
 
-    </style>
     <!-- Footer Start -->
     <?php include('views/footer.html'); ?>
     <!-- Footer End -->
 
     <!-- Modal Detalles Producto -->
-    <div class="modal fade product_view" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h3 class="modal-title" id="productModalLabel"></h3>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6 product_img">
-                        <img src="img/no-image.jpg" alt="No imagen disponible" class="img-responsive mb-3" id="productImage">
-                    </div>
-                    <div class="col-md-6 product_content">
-                        <h4>Producto: <span id="productName"></span></h4>
-                        
-                        <h4>Descripción:</h4>
-                        <p class="description" id="productDescription"></p>
-                        <h4>Código Producto: <span id="productId"></span></h4>
-                        <h4>Categoría: <span id="productCategory"></span></h4>
-                        <h4>Subcategoría: <span id="productSubcategory"></span></h4>
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+        aria-hidden="true">
 
-                        <h3 class="cost">
-                            <span class="glyphicon glyphicon-usd"></span> <span id="productPrice"></span>
-                            <small class="pre-cost"><span class="glyphicon glyphicon-usd"></span> <span id="productOldPrice"></span></small>
-                        </h3>
-                        <p class="stock"><strong>Stock:</strong> <span id="productStock"></span></p>
-                        <div class="space-ten"></div>
-                        <div class="btn-ground">
-                            <!--<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Agregar al carrito</button>
-                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-heart"></span> Agregar a la lista de deseos</button> -->
-                        </div>
-                    </div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="additional-details mt-3" id="additionalDetails"></div>
+                <div class="modal-body">
+                    <!-- El contenido del producto se insertará aquí -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-    <!-- Modal Detalles Producto End -->
 
     <!--FILTRADO DE PRODUCTOS -->
     <script src="assets/js/productos.js"></script>
